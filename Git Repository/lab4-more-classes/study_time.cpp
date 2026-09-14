@@ -42,6 +42,17 @@ class StudyTime
             // Return a new duration without changing either operand.
             return StudyTime(minutes + other.minutes);
         }
+
+                // ===== Resuelve estos TODO ahora (Parte E) =====
+
+        // TODO (Parte E): Define operator== so two StudyTime objects are equal
+        // when they represent the same number of minutes. The function must not
+        // modify either object and must return a bool.
+
+        bool operator==(const StudyTime &other) const
+        {
+            return minutes == other.minutes;
+        }
         
 };
 
@@ -73,10 +84,23 @@ int main() {
     dfault = reading;
 
     //Printing final value of StudyTime::getObjectCount() and changes after added objects
+    cout << "Part D:\n";
     cout << "New reading object: " <<  reading2.getMinutes() << " minutes" << endl;
     cout << "Objects created: " << StudyTime::getObjectCount() << endl;
 
     cout << "Default object: " << dfault.getMinutes() << " minutes" << endl;
     cout << "Final objects created: " << StudyTime::getObjectCount() << endl;
+
+    //creating new objects to teest operator==
+    StudyTime study(60);
+    StudyTime write(60);
+    StudyTime rest(45);
+
+    cout << "Part E:\n";
+    //cpmpairing results with boolalpha
+    cout << boolalpha << "Are study and write equal? " << (study == write) << endl; //is true
+    cout << boolalpha << "Are study and rest equal? " << (study == rest) << endl; //is false
+
+
     return 0;
 }
