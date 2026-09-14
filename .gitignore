@@ -1,0 +1,13 @@
+# Compiled executables (Windows)
+*.exe
+
+# Compiled executables (Mac/Linux)
+study_time
+course_section
+inheritance_preview
+
+# Intermediate object files
+*.o
+
+# Editor configuration
+.vscode/
