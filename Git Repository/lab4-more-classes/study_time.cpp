@@ -64,5 +64,19 @@ int main() {
     cout << "Total: " << total.getMinutes() << " minutes" << endl;
     cout << "Objects created: " << StudyTime::getObjectCount() << endl;
 
+    //Part D
+    //Initialized object from reading (calls copy constructor)
+    StudyTime reading2 = reading;
+    //New object with duration by default
+    StudyTime dfault;
+    //Assigning default to reading2 (assignment), doesn't increment objectCount because it's not a new object.
+    dfault = reading;
+
+    //Printing final value of StudyTime::getObjectCount() and changes after added objects
+    cout << "New reading object: " <<  reading2.getMinutes() << " minutes" << endl;
+    cout << "Objects created: " << StudyTime::getObjectCount() << endl;
+
+    cout << "Default object: " << dfault.getMinutes() << " minutes" << endl;
+    cout << "Final objects created: " << StudyTime::getObjectCount() << endl;
     return 0;
 }
